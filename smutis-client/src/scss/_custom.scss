@@ -1,0 +1,25 @@
+// Here you can add other styles
+.navbar-nav .nav-link {
+    padding-right: 15px;
+    padding-left: 0;
+}
+
+app-istat-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+// perfectScrollbar custom styles
+.ps__thumb-y {
+    transition: none;
+    width: 11px;
+}
+.ps__rail-x:hover, .ps__rail-y:hover, .ps__rail-x:focus, .ps__rail-y:focus {
+    background-color: inherit;
+    opacity: 1;
+}

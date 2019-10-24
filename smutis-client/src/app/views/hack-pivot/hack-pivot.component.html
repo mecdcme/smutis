@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    <label> Data: </label>
+    <select [(ngModel)]="pivotSel" (change)="onSelectPivot()">
+      <option selected="selected" value="-1">Select Data... </option>
+      <option *ngFor="let pivotI of pivotList" [ngValue]="pivotI">{{pivotI.label}}</option>
+    </select>
+    <div class="pull-right">
+        <label class="switch switch-3d switch-primary">
+        <input type="checkbox" class="switch-input" (change)="showChart = !showChart">
+        <span class="switch-slider"></span>
+      </label>
+     </div>
+  </div>
+  <div class="card-body">
+    <dx-chart id="chart" [ngStyle]="{'display': showChart ? 'block' : 'none' }" >
+      <dxo-common-series-settings type="bar"></dxo-common-series-settings>
+      <dxo-size></dxo-size>
+      <dxo-adaptive-layout  [width]="450"></dxo-adaptive-layout>
+      <dxo-tooltip [enabled]="true" [customizeTooltip]="customizeTooltip"></dxo-tooltip>
+    </dx-chart>
+    <dx-pivot-grid id="grid" [allowSortingBySummary]="true" [allowSorting]="true" [allowFiltering]="true"
+      [showRowGrandTotals]="showRowGrandTotals" [showColumnGrandTotals]="showColumnGrandTotals" [showBorders]="true"
+      [dataSource]="pivotGridDataSource" (onContextMenuPreparing)="contextMenuPreparing($event)">
+      <dxo-field-chooser></dxo-field-chooser>
+      <dxo-export [enabled]="true" fileName="Data" [allowExportSelectedData]="true"></dxo-export>
+      <dxo-field-panel [showDataFields]="showDataFields" [showRowFields]="showRowFields"
+        [showColumnFields]="showColumnFields" [showFilterFields]="showFilterFields" [allowFieldDragging]="true"
+        [visible]="true">
+      </dxo-field-panel>
+    </dx-pivot-grid>
+  </div>
