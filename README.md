@@ -18,7 +18,7 @@
 $ git clone https://github.com/mecdcme/smutis.git smutis
 
 # go into client app's directory
-$ cd smutis-smutis
+$ cd smutis-client
 
 # install app's dependencies
 $ npm install
@@ -42,7 +42,7 @@ $ ng build
 $ git clone https://github.com/mecdcme/istatboard-server.git istatboard-server
 
 # go into app's directory
-$ cd istatboard-server 
+$ cd smutis-server 
 
 # install app's dependencies
 $ npm install
