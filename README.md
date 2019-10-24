@@ -63,4 +63,4 @@ $ nodemon server.js
 **Mec Team **
 
 ## License
-Istatboard is EUPL-licensed
+SMUTIS is EUPL-licensed
